@@ -22,7 +22,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TOCropViewConstants.h"
-
+#import "TOCropScrollView.h"
 @class TOCropOverlayView;
 @class TOCropView;
 
@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
  The image that the crop view is displaying. This cannot be changed once the crop view is instantiated.
  */
 @property (nonnull, nonatomic, strong, readonly) UIImage *image;
-
+@property (nonatomic, strong) TOCropScrollView *scrollView;         /* The scroll view in charge of panning/zooming the image. */
 /**
  The cropping style of the crop view (eg, rectangular or circular)
  */
