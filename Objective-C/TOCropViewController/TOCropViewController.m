@@ -644,13 +644,13 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
             aspectRatio = CGSizeMake(1.0f, 1.0f);
             break;
         case TOCropViewControllerAspectRatioPreset1x2:
-            aspectRatio = CGSizeMake(1.0f, 2.0f);
-            break;
-        case TOCropViewControllerAspectRatioPreset2x1:
             aspectRatio = CGSizeMake(2.0f, 1.0f);
             break;
+        case TOCropViewControllerAspectRatioPreset2x1:
+            aspectRatio = CGSizeMake(1.0f, 2.0f);
+            break;
         case TOCropViewControllerAspectRatioPreset6x1:
-            aspectRatio = CGSizeMake(6.0f, 1.0f);
+            aspectRatio = CGSizeMake(1.0f, 6.0f);
             break;
         case TOCropViewControllerAspectRatioPreset5x4:
             aspectRatio = CGSizeMake(5.0f, 4.0f);
@@ -673,13 +673,13 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
                                 (self.aspectRatioLockEnabled && self.aspectRatioLockDimensionSwapEnabled);
     
     //If the image is a portrait shape, flip the aspect ratio to match
-    if (self.cropView.cropBoxAspectRatioIsPortrait &&
-        aspectRatioCanSwapDimensions)
-    {
-        CGFloat width = aspectRatio.width;
-        aspectRatio.width = aspectRatio.height;
-        aspectRatio.height = width;
-    }
+//    if (self.cropView.cropBoxAspectRatioIsPortrait &&
+//        aspectRatioCanSwapDimensions)
+//    {
+//        CGFloat width = aspectRatio.width;
+//        aspectRatio.width = aspectRatio.height;
+//        aspectRatio.height = width;
+//    }
     
     [self.cropView setAspectRatio:aspectRatio animated:animated];
 }
